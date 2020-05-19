@@ -7,13 +7,16 @@ class InputHandler:
         
     
     def parse(self):
-        #Read file
+        """
+        This function parses the input data from
+        csv to a list of items
+        :return: list of data
+        """
         with open(self.inputFile, 'r') as f:
             reader = csv.reader(f)
             
             next(reader)
             for row in reader:
                 self.store.append(row)
-                
-        
+
         return self.store
